@@ -2,14 +2,6 @@ $(document).ready(function(){
 
     $("#quiz").hide();
 
-    let quizContainer = $("#quiz");
-    let resultsContainer = $("#results");
-    let submitButton = $("#submit");
-    let timer = 60*5; 
-    let min = 0;
-    let sec = 00;
-
-
     //Question Array
     let easyQuestions = [
 
@@ -146,8 +138,8 @@ $(document).ready(function(){
             display = $('#timer');
         startTimer(fiveMinutes, display);
 
-        clearInterval(stateTimer)
-        return;
+        // clearInterval(stateTimer)
+        // return;
     })
 
     var currentquestion = 0
@@ -168,20 +160,25 @@ $(document).ready(function(){
             $("#submit").text("Finsh")
         }
         
- 
+    var qtyQuestions = 10;
+    var numCorrect = 0;
 
     $('.options').click(function(){
         var newvalue = $(this).data('value')
         if(newvalue === easyQuestions[currentquestion].correctAnswer){
-            //do something
+            numCorrect++;
            
         }
-        showquestion()
-            alert(newvalue)
+            showquestion()
+        //     alert(newvalue)
+        //     console.log(numCorrect)
         
         currentquestion++;
     })
     
-    
+    $("#submit").click(function(){
+        $("#quiz").text(numCorrect + "/10")
+
+    })
     
 })
