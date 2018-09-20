@@ -169,16 +169,31 @@ $(document).ready(function(){
             numCorrect++;
            
         }
-            showquestion()
-        //     alert(newvalue)
-        //     console.log(numCorrect)
-        
+
         currentquestion++;
+        if(currentquestion === 9){
+    
+            $("#quiz").hide()
+            
+            $("#results").text(numCorrect + "/10")  
+    
+    } 
+
+        else{
+            showquestion()
+        }
+    
     })
     
-    $("#submit").click(function(){
-        $("#quiz").text(numCorrect + "/10")
+        $("#submit").click(function(){
 
-    })
+            currentquestion = 0
+            numCorrect = 0
+            $(".instructions").show();
+            $("#quiz").hide();
+            $("#results").text("")
+
+        })
+
     
 })
