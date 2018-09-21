@@ -100,8 +100,10 @@ button:focus{
 }
 
 
-
-
+#results{
+  font-size: 8em;
+  color: rgb(225,57,62);
+}
 
 
 

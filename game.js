@@ -69,7 +69,7 @@ $(document).ready(function(){
                 c: "Meep meep!", 
                 d: "Eh, What's up doc?",
             },
-            correctAnswer: "a"
+            correctAnswer: "b"
         },
 
         {
@@ -86,12 +86,12 @@ $(document).ready(function(){
         {
             question: "8. What is Foghorn Leghorn's signature phrase",
             answers: {
-                a: "I say, Isay", 
+                a: "I say, I say", 
                 b: "I do declare", 
                 c: "Listen up y'all", 
                 d: "All's I'm sayin",
             },
-            correctAnswer: "b"
+            correctAnswer: "a"
         },
 
         {
@@ -101,6 +101,17 @@ $(document).ready(function(){
                 b: "Speedy Gonzales", 
                 c: "Pepe le Pew", 
                 d: "Bugs Bunny",
+            },
+            correctAnswer: "b"
+        },
+
+        {
+            question: "10. Subtitles appear at the beginning of each Road Runner cartoon in a fake version of what language?",
+            answers: {
+                a: "Greek", 
+                b: "Latin", 
+                c: "French", 
+                d: "Spanish",
             },
             correctAnswer: "b"
         },
@@ -140,12 +151,10 @@ $(document).ready(function(){
             display = $('#timer');
         startTimer(fiveMinutes, display);
 
-        // clearInterval(stateTimer)
-        // return;
     })
 
     var currentquestion = 0
-    var currentanswer = 0
+    
 
     function showquestion(){
         $("#questions").text(easyQuestions[currentquestion].question)
@@ -182,7 +191,7 @@ $(document).ready(function(){
         }
 
         currentquestion++;
-        if(currentquestion === 9){
+        if(currentquestion === 10){
     
             $("#quiz").hide()
             
