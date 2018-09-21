@@ -25,11 +25,12 @@ body{
 }
 
 #quiz{
-  height: 80%;
+  height: 100%;
 }
 
+
 footer{
-  position: relative;
+  /* position: relative; */
   margin-top: 20%;
 }
 
@@ -70,6 +71,15 @@ button{
     font-family: 'Love Ya Like A Sister', cursive;
   }
 
+.buttons{
+  position: relative;
+} 
+
+img{
+  margin: -20% -25%; 
+  width: 150%;
+  position: absolute;
+}
 
   #btn0, #btn1, #btn2, #btn3{
       width: 275px;

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     $("#quiz").hide();
+    $("#footer").hide();
 
     //Question Array
     let easyQuestions = [
@@ -106,10 +107,11 @@ $(document).ready(function(){
 
     ];
 
-    $("#easy").click(function(){
+    $("#start").click(function(){
 
         $(".instructions").hide();
         $("#quiz").show();
+        $("img").fadeOut(0)
 
         startTimer()
 
@@ -170,12 +172,23 @@ $(document).ready(function(){
            
         }
 
+        else{
+            $("img").fadeIn(50)
+            
+            setTimeout(function(){
+                $("img").fadeOut(50)
+            },500)
+
+        }
+
         currentquestion++;
         if(currentquestion === 9){
     
             $("#quiz").hide()
             
             $("#results").text(numCorrect + "/10")  
+
+            $("#footer").show();
     
     } 
 
@@ -192,6 +205,7 @@ $(document).ready(function(){
             $(".instructions").show();
             $("#quiz").hide();
             $("#results").text("")
+            $("#footer").hide();
 
         })
 
